@@ -1,1 +1,1 @@
-stat /tmp/step1
+ansible --version

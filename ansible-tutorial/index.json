@@ -11,7 +11,8 @@
         },
         {
           "title": "Setting Up Ansible",
-          "text": "env.md"
+          "text": "step1/env.md",
+          "verify": "step1/verify.sh"
         }
       ]
     },

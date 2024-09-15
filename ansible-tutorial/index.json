@@ -8,6 +8,10 @@
       "steps": [
         {
           "text": "step1.md"
+        },
+        {
+          "title": "Setting Up Ansible",
+          "text": "env.md"
         }
       ]
     },

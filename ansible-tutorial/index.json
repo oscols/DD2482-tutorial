@@ -16,6 +16,15 @@
           "text": "step2/configssh.md",
           "verify": "step2/verify.sh"
 
+        },
+        {
+          "title": "Writing Your First Ansible Playbook",
+          "text": "step3/playbook.md",
+          "verify": "step3/verify.sh"
+        },
+        {
+          "title": "Running the Playbook",
+          "text": "step4/run.md"
         }
       ]
     },

@@ -10,6 +10,15 @@
           "title": "Setting Up Ansible",
           "text": "step1/env.md",
           "verify": "step1/verify.sh"
+        },
+        {
+          "title": "Writing Your First Ansible Playbook",
+          "text": "step3/playbook.md",
+          "verify": "step3/verify.sh"
+        },
+        {
+          "title": "Running the Playbook",
+          "text": "step4/run.md"
         }
       ]
     },

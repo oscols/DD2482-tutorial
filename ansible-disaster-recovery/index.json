@@ -1,0 +1,19 @@
+{
+    "title": "Ansible",
+    "description": "How to use Ansible for ...",
+    "details": {
+      "intro": {
+        "text": "intro.md"
+      },
+      "steps": [
+        {
+          "title": "Setting Up Ansible",
+          "text": "step1/env.md",
+          "verify": "step1/verify.sh"
+        }
+      ]
+    },
+    "backend": {
+      "imageid": "ubuntu"
+    }
+}

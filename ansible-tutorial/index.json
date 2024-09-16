@@ -10,6 +10,10 @@
           "title": "Setting Up Ansible",
           "text": "step1/env.md",
           "verify": "step1/verify.sh"
+        },
+        {
+          "title": "Configuring SSH Access",
+          "text": "step2/configssh.md"
         }
       ]
     },

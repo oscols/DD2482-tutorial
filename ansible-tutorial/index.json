@@ -13,7 +13,9 @@
         },
         {
           "title": "Configuring SSH Access",
-          "text": "step2/configssh.md"
+          "text": "step2/configssh.md",
+          "verify": "step2/verify.sh"
+
         }
       ]
     },

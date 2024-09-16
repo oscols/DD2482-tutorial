@@ -1,6 +1,6 @@
 {
     "title": "Ansible",
-    "description": "How to use Ansible for",
+    "description": "How to use Ansible for ...",
     "details": {
       "intro": {
         "text": "intro.md"

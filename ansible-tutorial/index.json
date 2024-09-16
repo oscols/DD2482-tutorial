@@ -1,6 +1,6 @@
 {
     "title": "Ansible",
-    "description": "Let users copy or exec code blocks",
+    "description": "How to use Ansible for ...",
     "details": {
       "intro": {
         "text": "intro.md"

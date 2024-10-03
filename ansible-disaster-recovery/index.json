@@ -13,12 +13,12 @@
         },
         {
           "title": "Writing Your First Ansible Playbook",
-          "text": "step3/playbook.md",
-          "verify": "step3/verify.sh"
+          "text": "step2/playbook.md",
+          "verify": "step2/verify.sh"
         },
         {
           "title": "Running the Playbook",
-          "text": "step4/run.md"
+          "text": "step3/run.md"
         }
       ]
     },

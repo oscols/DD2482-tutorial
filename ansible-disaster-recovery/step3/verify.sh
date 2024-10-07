@@ -1,0 +1,1 @@
+curl -s http://localhost | grep -q "Welcome to nginx!"

@@ -4,13 +4,9 @@ Create a file for your playbook
 touch playbook.yml
 ```{{exec}}
 
-Edit the file
-```
-nano playbook.yml
-```{{exec}}
-
 Install and configure Ngix on local server
 ```
+cat <<EOF > playbook.yml
 ---
 - hosts: localhost
   become: yes
@@ -23,4 +19,5 @@ Install and configure Ngix on local server
       service:
         name: nginx
         state: started
+EOF
 ```{{exec}}

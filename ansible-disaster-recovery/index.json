@@ -25,11 +25,7 @@
         },
         {
           "title": "Disaster Strikes",
-          "text": "step6/disaster.md"
-        },
-        {
-          "title": "Recover",
-          "text": "step7/recover.md"
+          "text": "step7/disaster.md"
         }
       ]
     },

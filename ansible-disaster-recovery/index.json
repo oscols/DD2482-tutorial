@@ -11,14 +11,22 @@
           "text": "step1/env.md",
           "verify": "step1/verify.sh"
         },
+        // {
+        //   "title": "Writing Your First Ansible Playbook",
+        //   "text": "step2/playbook.md",
+        //   "verify": "step2/verify.sh"
+        // },
+        // {
+        //   "title": "Running the Playbook",
+        //   "text": "step3/run.md"
+        // },
         {
-          "title": "Writing Your First Ansible Playbook",
-          "text": "step2/playbook.md",
-          "verify": "step2/verify.sh"
+          "title": "Simulate Servers",
+          "text": "step4/simulate.md"
         },
         {
-          "title": "Running the Playbook",
-          "text": "step3/run.md"
+          "title": "Simulate Servers",
+          "text": "step4/simulate.md"
         }
       ]
     },

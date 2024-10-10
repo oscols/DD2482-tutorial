@@ -10,12 +10,28 @@ touch launch.yml
 ```
 cat <<EOF >> launch.yml
 ---
-- name: Missile Launch System
-  hosts: missile_launch
+- hosts: command_server
+  become: yes
   tasks:
-    - name: Notify missile launch system is running
-      debug:
-        msg: "Missile launch system is running on port {{ ansible_port }}"
+    - name: Install Nginx on command server
+      apt:
+        name: nginx
+        state: present
+    - name: Start Nginx service on command server
+      service:
+        name: nginx
+        state: started
+    - name: Enable missile launch on command server
+      copy:
+        content: |
+          #!/bin/bash
+          echo "Launching missile..."
+
+    - name: Implement abort launch on command server
+      copy:
+        content: |
+          #!/bin/bash
+          echo "Not implemented yet, please switch to the backup server."
 EOF
 ```{{exec}}
 
@@ -26,11 +42,21 @@ touch recovery.yml
 ```
 cat <<EOF >> recovery.yml
 ---
-- name: Disaster Recovery Backup
-  hosts: disaster_recovery
+- hosts: backup_server
+  become: yes
   tasks:
-    - name: Notify disaster recovery system is running
-      debug:
-        msg: "Disaster recovery system is running on port {{ ansible_port }}"
+    - name: Install Nginx on backup server
+      apt:
+        name: nginx
+        state: present
+    - name: Start Nginx service on backup server
+      service:
+        name: nginx
+        state: started
+    - name: Implement abort missile launch on backup server
+      copy:
+        content: |
+          #!/bin/bash
+          echo "Missile launch aborted successfully!"
 EOF
 ```{{exec}}

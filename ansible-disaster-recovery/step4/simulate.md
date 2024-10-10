@@ -18,10 +18,10 @@ touch inventory.ini
 ```
 cat <<EOF >> inventory.ini 
 [missile_launch]
-localhost ansible_port=8000 ansible_host=127.0.0.1 ansible_connection=local
+localhost ansible_port=8000 ansible_host=127.0.0.1
 
 [disaster_recovery]
-localhost ansible_port=8001 ansible_host=127.0.0.1 ansible_connection=local 
+localhost ansible_port=8001 ansible_host=127.0.0.1
 EOF
 ```{{exec}}
 

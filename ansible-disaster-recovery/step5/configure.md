@@ -13,8 +13,6 @@ cat <<EOF >> launch.yml
 - name: Missile Launch System
   hosts: missile_launch
   tasks:
-    - name: Start command server
-      command: "python3 -m http.server 8000"
     - name: Notify missile launch system is running
       debug:
         msg: "Missile launch system is running on port {{ ansible_port }}"
@@ -31,8 +29,6 @@ cat <<EOF >> recovery.yml
 - name: Disaster Recovery Backup
   hosts: disaster_recovery
   tasks:
-    - name: Start command server
-      command: "python3 -m http.server 8000"
     - name: Notify disaster recovery system is running
       debug:
         msg: "Disaster recovery system is running on port {{ ansible_port }}"

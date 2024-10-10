@@ -11,8 +11,6 @@ cat <<EOF >> launch.yml
 - hosts: missile_launch
   become: yes
   tasks:
-    - name: Simulate missile launch server
-      command: python3 -m http.server 8000 &
     - name: Create launch missile script
       copy:
         content: |
@@ -21,10 +19,11 @@ cat <<EOF >> launch.yml
           # Missile launch logic
         dest: /usr/local/bin/launch_missile
         mode: '0755'
+
     - name: Run missile launch script
       command: /usr/local/bin/launch_missile
 
-    - name: Create abort missile script (not implemented)
+    - name: Create abort missile script (not implemented on command server)
       copy:
         content: |
           #!/bin/bash
@@ -44,8 +43,6 @@ cat <<EOF >> recovery.yml
 - hosts: disaster_recovery
   become: yes
   tasks:
-    - name: Simulate backup server
-      command: python3 -m http.server 8001 &
     - name: Create abort missile script on backup server
       copy:
         content: |
@@ -53,6 +50,7 @@ cat <<EOF >> recovery.yml
           echo "Missile launch aborted successfully!"
         dest: /usr/local/bin/abort_missile
         mode: '0755'
+
     - name: Run abort missile script
       command: /usr/local/bin/abort_missile
 EOF

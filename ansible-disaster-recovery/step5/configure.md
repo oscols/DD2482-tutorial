@@ -1,10 +1,5 @@
 ### Configure the servers using Ansible
 
-
-```
-touch launch.yml
-```{{exec}}
-
 ```
 cat <<EOF >> launch.yml
 ---
@@ -28,19 +23,15 @@ cat <<EOF >> launch.yml
         content: |
           #!/bin/bash
           echo "Not implemented yet, please switch to the backup server."
-        dest: /usr/local/bin/abort_missile
+        dest: /usr/local/bin/abort
         mode: '0755'
 EOF
 ```{{exec}}
 
 ```
-touch recovery.yml
-```{{exec}}
-
-```
 cat <<EOF >> recovery.yml
 ---
-- hosts: disaster_recovery
+- hosts: missile_launch
   become: yes
   tasks:
     - name: Create abort missile script on backup server
@@ -48,10 +39,7 @@ cat <<EOF >> recovery.yml
         content: |
           #!/bin/bash
           echo "Missile launch aborted successfully!"
-        dest: /usr/local/bin/abort_missile
+        dest: /usr/local/bin/abort
         mode: '0755'
-
-    - name: Run abort missile script
-      command: /usr/local/bin/abort_missile
 EOF
 ```{{exec}}

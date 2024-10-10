@@ -18,6 +18,18 @@
         {
           "title": "Configure Servers",
           "text": "step5/configure.md"
+        },
+        {
+          "title": "Run Playbook",
+          "text": "step6/playbook.md"
+        },
+        {
+          "title": "Disaster Strikes",
+          "text": "step6/disaster.md"
+        },
+        {
+          "title": "Recover",
+          "text": "step7/recover.md"
         }
       ]
     },

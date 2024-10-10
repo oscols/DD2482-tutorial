@@ -12,10 +12,6 @@ python3 -m http.server 8001 &
 ```{{exec}}
 
 ```
-touch inventory.ini
-```{{exec}}
-
-```
 cat <<EOF >> inventory.ini 
 [missile_launch]
 missile_server ansible_port=8000 ansible_host=127.0.0.1 ansible_connection=local

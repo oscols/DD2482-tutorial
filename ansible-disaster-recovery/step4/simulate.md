@@ -21,6 +21,7 @@ cat <<EOF >> inventory.ini
 localhost ansible_port=8000 ansible_host=127.0.0.1 ansible_connection=local
 
 [disaster_recovery]
-localhost ansible_port=8001 ansible_host=127.0.0.1 ansible_connection=local EOF
+localhost ansible_port=8001 ansible_host=127.0.0.1 ansible_connection=local 
+EOF
 ```{{exec}}
 

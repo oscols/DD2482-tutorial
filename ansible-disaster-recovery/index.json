@@ -6,13 +6,13 @@
         "text": "intro.md"
       },
       "files": {
-        "assets/setup.sh": "/assets/setup.sh"
+        "assets/setup.sh": "/usr/local/bin/setup.sh"
       },
       "steps": [
         {
           "title": "Setting up environment",
           "description": "Pre-configuring files and directories",
-          "code": "bash /assets/setup.sh"
+          "code": "chmod +x /usr/local/bin/setup.sh && bash /usr/local/bin/setup.sh"
         },
         {
           "title": "Setting Up Ansible",

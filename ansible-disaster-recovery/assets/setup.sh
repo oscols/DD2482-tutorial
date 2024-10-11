@@ -8,7 +8,7 @@ echo "WARNING: Changing Target Location"
 sleep 0.5
 echo "..."
 sleep 2
-echo "Spoons headquarters"
+echo "Spoon's Headquarters"
 sleep 0.5
 echo "..."
 sleep 2

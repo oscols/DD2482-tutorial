@@ -28,6 +28,10 @@
           "title": "Disaster Strikes",
           "text": "step7/disaster.md",
           "foreground": "assets/launch.sh"
+        },
+        {
+          "title": "The End",
+          "text": "step8/thankgod.md"
         }
       ]
     },

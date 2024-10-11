@@ -22,12 +22,12 @@
         },
         {
           "title": "Run Playbook",
-          "text": "step6/playbook.md",
-          "foreground": "assets/launch.sh"
+          "text": "step6/playbook.md"
         },
         {
           "title": "Disaster Strikes",
-          "text": "step7/disaster.md"
+          "text": "step7/disaster.md",
+          "foreground": "assets/launch.sh"
         }
       ]
     },

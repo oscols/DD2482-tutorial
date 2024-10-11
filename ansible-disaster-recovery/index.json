@@ -27,7 +27,7 @@
         {
           "title": "Disaster Strikes",
           "text": "step7/disaster.md",
-          "background": "assets/launch.sh"
+          "foreground": "assets/launch.sh"
         },
         {
           "title": "The End",

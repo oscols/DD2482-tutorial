@@ -5,19 +5,12 @@
       "intro": {
         "text": "intro.md"
       },
-      "files": {
-        "assets/setup.sh": "/usr/local/bin/setup.sh"
-      },
       "steps": [
-        {
-          "title": "Setting up environment",
-          "description": "Pre-configuring files and directories",
-          "background": "assets/setup.sh"
-        },
         {
           "title": "Setting Up Ansible",
           "text": "step1/env.md",
-          "verify": "step1/verify.sh"
+          "verify": "step1/verify.sh",
+          "background": "assets/setup.sh"
         },
         {
           "title": "Simulate Servers",

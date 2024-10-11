@@ -10,6 +10,7 @@ cat <<EOF >> launch.yml
       copy:
         content: |
           #!/bin/bash
+          sleep 1
           echo "Launching missile..."
           # Missile launch logic
         dest: /usr/local/bin/launch_missile

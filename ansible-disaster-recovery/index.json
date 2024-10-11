@@ -5,7 +5,15 @@
       "intro": {
         "text": "intro.md"
       },
+      "files": {
+        "assets/setup.sh": "/usr/local/bin/setup.sh"
+      },
       "steps": [
+        {
+          "title": "Setting up environment",
+          "description": "Pre-configuring files and directories",
+          "code": "bash /usr/local/bin/setup.sh"
+        },
         {
           "title": "Setting Up Ansible",
           "text": "step1/env.md",

@@ -9,3 +9,5 @@ In this tutorial you will learn how to use the Configuration Management tool Ans
 
 A flowchart of the military system:
 …
+
+![image info](./image.png)

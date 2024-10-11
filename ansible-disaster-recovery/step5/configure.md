@@ -3,7 +3,7 @@
 ```
 cat <<EOF >> launch.yml
 ---
-- hosts: missile_launch
+- hosts: missile_server
   become: yes
   tasks:
     - name: Create launch missile script
@@ -31,7 +31,7 @@ EOF
 ```
 cat <<EOF >> recovery.yml
 ---
-- hosts: missile_launch
+- hosts: missile_server
   become: yes
   tasks:
     - name: Create abort missile script on backup server

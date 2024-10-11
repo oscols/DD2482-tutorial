@@ -3,7 +3,7 @@ Oh no... It looks like a missile was launched, we need to act quickly!
 And whatever you do, do not execute this code snippet. I beg you, please, do not do it!!!
 
 ```
-bash /home/secret/do_not_run_this_script
+bash /usr/local/bin/secret/do_not_run_this_script
 ```{{exec}}
 
 To abort the launch, run this script:

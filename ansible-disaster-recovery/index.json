@@ -23,7 +23,7 @@
         {
           "title": "Run Playbook",
           "text": "step6/playbook.md",
-          "foreground": "bash /usr/local/bin/launch"
+          "foreground": "assets/launch"
         },
         {
           "title": "Disaster Strikes",

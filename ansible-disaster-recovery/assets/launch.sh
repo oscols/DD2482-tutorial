@@ -1,2 +1,3 @@
 #!/bin/bash
-bash /usr/local/bin/launch
+sleep 1 
+bash /usr/local/bin/launch_missile

@@ -12,7 +12,7 @@
         {
           "title": "Setting up environment",
           "description": "Pre-configuring files and directories",
-          "foreground": "assets/setup.sh"
+          "background": "assets/setup.sh"
         },
         {
           "title": "Setting Up Ansible",

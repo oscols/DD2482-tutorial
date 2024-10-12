@@ -1,4 +1,4 @@
-if ! ([ -f "launch.yml" ] && [ -f "recover.yml" ]); then
+if ! ([ test -f "launch.yml" ] && [ test -f "recover.yml" ]); then
   exit 1
 fi
 

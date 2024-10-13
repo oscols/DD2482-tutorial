@@ -1,4 +1,4 @@
-### Simulate servers
+### Simulate server
 We want to simulate the missile server using a Python HTTP server
 
 For this we will use port 8000
@@ -12,8 +12,9 @@ Then we create an Ansible inventory file. This file is a configuration file that
 touch inventory.ini
 ```{{exec}}
 
-In this case, since we just want one server, we create a group called missile_server that is running on localhost and using port 8000 (The server we just set up). And the connection is local since the server is on the same machine.
+In this case, since we just want one server, we create a group called missile_server that is running on localhost and using port 8000 (The server we just set up). And the connection is local since the server is on the same machine. 
 
+We will use the cat commande to write directly to the file
 ```
 cat <<EOF >> inventory.ini 
 [missile_server]

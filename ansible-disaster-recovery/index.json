@@ -13,12 +13,12 @@
           "background": "assets/setup.sh"
         },
         {
-          "title": "Simulate Servers",
+          "title": "Simulate Server",
           "text": "step2/simulate.md",
           "verify": "step2/verify.sh"
         },
         {
-          "title": "Configure Servers",
+          "title": "Configure Server",
           "text": "step3/configure.md",
           "verify": "step3/verify.sh"
         },

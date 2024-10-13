@@ -1,13 +1,12 @@
 
 ### Setting Up the Environment
-Install Ansible
+First off, we need to install Ansible using these commands
 ```
 sudo apt update
 sudo apt install ansible
 ```{{exec}}
 
-Check version
-
+We can check the version
 ```
 ansible --version
 ```{{exec}}

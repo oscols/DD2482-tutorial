@@ -56,6 +56,8 @@ Of course, we also want to be able to abort the launch. It is currently under ma
         mode: '0755'
 ```{{exec}}
 
+Now, you can write out and exit Nano.
+
 We also want to create a backup in case something goes wrong, as a Disaster Recovery mechanism
 ```
 touch backup_server.yml
@@ -68,7 +70,7 @@ cat <<EOF >> backup_server.yml
 - hosts: missile_server
   become: yes
   tasks:
-      - name: Create launch missile script
+    - name: Create launch missile script
       copy:
         content: |
           #!/bin/bash

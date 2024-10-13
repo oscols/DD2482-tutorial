@@ -14,28 +14,28 @@
         },
         {
           "title": "Simulate Servers",
-          "text": "step4/simulate.md",
-          "verify": "step4/verify.sh"
+          "text": "step2/simulate.md",
+          "verify": "step2/verify.sh"
         },
         {
           "title": "Configure Servers",
-          "text": "step5/configure.md",
-          "verify": "step5/verify.sh"
+          "text": "step3/configure.md",
+          "verify": "step3/verify.sh"
         },
         {
           "title": "Run Playbook",
-          "text": "step6/playbook.md",
-          "verify": "step6/verify.sh"
+          "text": "step4/playbook.md",
+          "verify": "step4/verify.sh"
         },
         {
           "title": "Disaster Strikes",
-          "text": "step7/disaster.md",
+          "text": "step5/disaster.md",
           "foreground": "assets/launch.sh",
-          "verify": "step7/verify.sh"
+          "verify": "step5/verify.sh"
         },
         {
           "title": "The End",
-          "text": "step8/thankgod.md"
+          "text": "step6/thankgod.md"
         }
       ]
     },

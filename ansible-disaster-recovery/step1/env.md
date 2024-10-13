@@ -6,7 +6,7 @@ sudo apt update
 sudo apt install ansible
 ```{{exec}}
 
-We can check the version
+We can check the version using
 ```
 ansible --version
 ```{{exec}}

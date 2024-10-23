@@ -5,7 +5,7 @@ First of all, we need to create an Ansible inventory file. This file is a config
 touch inventory.ini
 ```{{exec}}
 
-Now, let's edit the inventory file to tell Ansible that we are working on the local machine (`localhost`).
+Now, let's edit the inventory file to tell Ansible that we are working on the local machine (localhost).
 
 We will use the cat commande to write directly to the file.
 ```

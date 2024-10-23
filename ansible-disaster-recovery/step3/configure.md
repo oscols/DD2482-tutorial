@@ -1,9 +1,7 @@
-### Configure the server using Ansible
-Now we need to configure the servers and add all the needed functionality.
+### Configure Ansible Playbooks
+Now that we've set up Ansible to work locally, it's time to configure our simulated missile environment by using an Ansible playbook.
 
-To configure servers, Ansible uses Playbooks to automate the configuration and management. The playbooks are written in YAML format.
-
-So, first we create the command server for the missile 
+First, let's create the playbook that will configure the missile environment.
 ```
 touch command_server.yml
 ```{{exec}}
@@ -58,12 +56,12 @@ Of course, we also want to be able to abort the launch. It is currently under ma
 
 Now, you can write out and exit Nano.
 
-We also want to create a backup in case something goes wrong, as a Disaster Recovery mechanism
+We also want to create a backup in case something goes wrong, as a Disaster Recovery mechanism.
 ```
 touch backup_server.yml
 ```{{exec}}
 
-Use the same setup as for the command server but with the old abort script
+Use the same setup as for the command server but with the old abort script.
 ```
 cat <<EOF >> backup_server.yml
 ---

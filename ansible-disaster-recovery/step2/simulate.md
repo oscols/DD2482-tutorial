@@ -5,7 +5,7 @@ First of all, we need to create an Ansible inventory file. This file is a config
 touch inventory.ini
 ```{{exec}}
 
-Now, let's edit the inventory file and create a host group called missile server, the host group is defined with ```[missile_server]```. Then we define an individual host ```missile_server``` and we set the connection to local to tell Ansible that we are working on the local machine (localhost).
+Now, let's edit the inventory file to create a host group named missile_server, defined by `[missile_server]`. Within this group, we’ll specify an individual host, `missile_server`, and set the connection type to `local`. This tells Ansible that all tasks should be executed on the local machine (localhost), rather than connecting to a remote server.
 
 We will use the cat commande to write directly to the file.
 ```

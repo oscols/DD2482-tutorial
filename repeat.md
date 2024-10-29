@@ -92,6 +92,27 @@ server {
 docker run -d --name missile_server -p 8000:80 -v $(pwd)/html:/usr/share/nginx/html nginx:alpine
 ```
 
+```
+- hosts: missile_server
+  become: yes
+  tasks:
+    - name: Create directory for HTML files
+      file:
+        path: /usr/share/nginx/html
+        state: directory
+        mode: '0755'
+
+    - name: Copy test file to NGINX server
+      copy:
+        content: |
+          This is a test file.
+        dest: /usr/share/nginx/html/test.txt
+        mode: '0644'
+```
+We can use Ad-hoc commands to run scripts:
+```
+ansible missile_server -i inventory.ini -m command -a "/usr/share/nginx/html/abort_missile.sh" --become
+```
 
 
 Stop and Clean Up Containers

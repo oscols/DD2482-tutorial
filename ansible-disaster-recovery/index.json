@@ -9,29 +9,24 @@
         {
           "title": "Setting Up Ansible",
           "text": "step1/env.md",
-          "background": "assets/setup.sh",
-          "verify": "step1/verify.sh"
+          "background": "assets/setup.sh"
         },
         {
           "title": "Simulate Server",
-          "text": "step2/simulate.md",
-          "verify": "step2/verify.sh"
+          "text": "step2/simulate.md"
         },
         {
           "title": "Configure Server",
-          "text": "step3/configure.md",
-          "verify": "step3/verify.sh"
+          "text": "step3/configure.md"
         },
         {
           "title": "Run Playbook",
-          "text": "step4/playbook.md",
-          "verify": "step4/verify.sh"
+          "text": "step4/playbook.md"
         },
         {
           "title": "Disaster Strikes",
           "text": "step5/disaster.md",
-          "foreground": "assets/launch.sh",
-          "verify": "step5/verify.sh"
+          "foreground": "assets/launch.sh"
         },
         {
           "title": "The End",

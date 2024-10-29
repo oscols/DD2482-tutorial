@@ -74,6 +74,24 @@ ansible-playbook -i inventory.ini backup_server.yml
 ```
 
 
+Kinda works:
+default.conf file
+```
+server {
+    listen 80;
+    server_name localhost;
+
+    location / {
+        root /usr/share/nginx/html;
+        index index.html;
+    }
+}
+```
+
+```
+docker run -d --name missile_server -p 8000:80 -v $(pwd)/html:/usr/share/nginx/html nginx:alpine
+```
+
 
 
 Stop and Clean Up Containers

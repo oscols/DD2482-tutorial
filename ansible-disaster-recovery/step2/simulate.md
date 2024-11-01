@@ -15,3 +15,6 @@ missile_server ansible_connection=local
 EOF
 ```{{exec}}
 
+
+TEST
+[ACCESS NGINX]({{TRAFFIC_HOST1_80}})

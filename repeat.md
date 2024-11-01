@@ -89,7 +89,7 @@ server {
 ```
 
 ```
-docker run -d --name missile_server -p 8000:80 -v $(pwd)/html:/usr/share/nginx/html nginx:alpine
+docker run -d --name missile_server -p 80:80 -v $(pwd)/html:/usr/share/nginx/html nginx:alpine
 ```
 
 ```
@@ -113,6 +113,70 @@ We can use Ad-hoc commands to run scripts:
 ```
 ansible missile_server -i inventory.ini -m command -a "/usr/share/nginx/html/abort_missile.sh" --become
 ```
+
+
+[ACCESS NGINX]({{TRAFFIC_HOST1_80}})
+```
+docker run -d -p 80:80 --name command_server nginx:alpine
+```
+
+
+[missile_server]
+command_server ansible_connection=docker
+
+
+docker run -d --name command_server -p 80:80 nginx:alpine /bin/sh -c "apk add --no-cache python3 && tail -f /dev/null"
+
+
+#!/bin/bash
+echo "Hello from Ansible!"
+
+---
+- name: Setup Nginx Docker Container
+  hosts: command_server
+  become: yes
+  tasks:
+    - name: Copy bash script to the server
+      copy:
+        src: message.sh
+        dest: /tmp/message.sh
+        mode: '0755'
+
+    - name: Run the bash script on the server
+      command: /tmp/message.sh
+
+    - name: Install Nginx (if not already installed)
+      apt:
+        name: nginx
+        state: present
+      when: ansible_os_family == "Debian"
+
+    - name: Start Nginx service
+      service:
+        name: nginx
+        state: started
+
+
+---
+- name: Configure Nginx Server
+  hosts: nginx_server
+  tasks:
+    - name: Copy bash script to the server
+      copy:
+        src: message.sh
+        dest: /tmp/message.sh
+        mode: '0755'
+
+    - name: Run the bash script on the server
+      shell: /tmp/message.sh
+      register: script_output
+
+    - name: Display the output of the script
+      debug:
+        var: script_output.stdout
+
+ansible-playbook -i inventory.ini command_server.yml
+
 
 
 Stop and Clean Up Containers

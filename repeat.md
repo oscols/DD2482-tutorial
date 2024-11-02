@@ -127,6 +127,11 @@ command_server ansible_connection=docker
 
 docker run -d --name command_server -p 80:80 nginx:alpine /bin/sh -c "apk add --no-cache python3 && tail -f /dev/null"
 
+docker run -d --name command_server -p 80:80 nginx:alpine /bin/sh -c "apk add --no-cache python3 py3-pip && pip3 install --upgrade pip && pip3 install ansible && tail -f /dev/null"
+
+docker run -d --name command_server -p 80:80 -u 1000:1000 nginx:alpine /bin/sh -c "apk add --no-cache python3 py3-pip && pip3 install ansible && tail -f /dev/null"
+
+
 
 #!/bin/bash
 echo "Hello from Ansible!"
@@ -159,7 +164,7 @@ echo "Hello from Ansible!"
 
 ---
 - name: Configure Nginx Server
-  hosts: nginx_server
+  hosts: command_server
   tasks:
     - name: Copy bash script to the server
       copy:
@@ -177,6 +182,36 @@ echo "Hello from Ansible!"
 
 ansible-playbook -i inventory.ini command_server.yml
 
+
+---------------------------- TESTA DET HÄR HUGO:
+docker run -d -p 80:80 --name command_server nginx:alpine
+
+
+(För att gå in i containern, behövs inte göras)
+docker exec -it command_server /bin/sh
+
+inventory.ini:
+[command_server]
+command_server ansible_connection=local
+
+command_server.yml:
+---
+- name: Configure Nginx Server
+  hosts: command_server
+  gather_facts: no
+  tasks:
+    - name: Copy bash script with debugging and stderr redirection to the server
+      raw: docker exec -i command_server /bin/sh -c "echo -e '#!/bin/sh\n \necho \"Hello from Ansible!\" >&2' > /root/message.sh && chmod +x /root/message.sh"
+
+    - name: Verify script exists inside the container
+      raw: docker exec -i command_server ls -l /root/message.sh
+
+    - name: Display contents of the script
+      raw: docker exec -i command_server cat /root/message.sh
+
+    - name: Run the bash script on the server with output redirection
+      raw: docker exec -i command_server /bin/sh /root/message.sh
+----------------------------
 
 
 Stop and Clean Up Containers

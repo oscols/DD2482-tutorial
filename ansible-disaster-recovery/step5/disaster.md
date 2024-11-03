@@ -1,9 +1,8 @@
 Oh no... It looks like a missile was launched, we need to act quickly!
 
-And whatever you do, do not execute this code snippet. I beg you, please, don't do it!!! Please...
-
+And whatever you do, do not execute this command. I beg you, please, don't do it. Please...
 ```
-bash /usr/local/bin/secret/do_not_run_this_script
+docker exec -i command_server /bin/sh /root/secret/do_not_run_this_script.sh
 ```{{exec}}
 
 To abort the launch, run this script on the Command Server:
@@ -11,7 +10,7 @@ To abort the launch, run this script on the Command Server:
 docker exec -i command_server /bin/sh /root/abort_missile.sh
 ```{{exec}}
 
-Oh no, it looks like this ansible playbook version does not have a functioning version of the abort function. You now need to load the backup playbook, quickly!
+Oh no, it looks like this ansible playbook version does not have a functioning version of the abort function and we haven't configured the Backup Server yet! You need to configure it quickly! Run The playbook!
 ```
 ansible-playbook -i inventory.ini backup_server.yml
 ```{{exec}}

@@ -17,10 +17,14 @@ echo 'Spoon'\''s Headquarters'
 sleep 0.5
 echo '...'
 sleep 2
-echo 'Location will be obliterated within 1 minute'
-sleep 0.5
-echo '...'
+echo 'Location will be obliterated in 60 seconds'
 sleep 1
-echo 'OH NO, WHAT DID YOU DO????'
+echo '59...'
+sleep 1
+echo '58...'
+sleep 1
+echo '57...'
+sleep 1
+echo 'OH NOOOO, WHAT DID YOU DO????'
 EOF
 "

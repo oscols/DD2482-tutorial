@@ -17,12 +17,12 @@
         {
           "title": "Ansible inventory fil",
           "text": "step2/inventory.md",
-          "foreground": "assets/setup1.sh"
+          "background": "assets/setup1.sh"
         },
         {
           "title": "Configure Server",
           "text": "step3/configure.md",
-          "foreground": "assets/setup2.sh"
+          "background": "assets/setup2.sh"
         },
         {
           "title": "Run Playbook",

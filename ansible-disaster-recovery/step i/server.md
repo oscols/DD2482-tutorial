@@ -1,5 +1,6 @@
 
 ### Setting Up the Servers
+FIX
 What the servers are used for
 Why we need two servers
 

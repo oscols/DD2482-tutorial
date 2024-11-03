@@ -201,6 +201,18 @@ command_server.yml:
   gather_facts: no
   tasks:
     - name: Copy bash script with debugging and stderr redirection to the server
+      raw: |
+        docker exec -i command_server /bin/sh -c "
+        echo -e '#!/bin/sh\n
+        echo \"Hello from Ansible!\" >&2' > /root/message.sh &&
+        chmod +x /root/message.sh"
+
+<!-- ---
+- name: Configure Nginx Server
+  hosts: command_server
+  gather_facts: no
+  tasks:
+    - name: Copy bash script with debugging and stderr redirection to the server
       raw: docker exec -i command_server /bin/sh -c "echo -e '#!/bin/sh\n \necho \"Hello from Ansible!\" >&2' > /root/message.sh && chmod +x /root/message.sh"
 
     - name: Verify script exists inside the container
@@ -211,7 +223,16 @@ command_server.yml:
 
     - name: Run the bash script on the server with output redirection
       raw: docker exec -i command_server /bin/sh /root/message.sh
+ -->
 
+   tasks:
+    - name: Create launch missile script
+      raw: |
+        docker exec -i command_server /bin/sh -c "
+        echo -e '#!/bin/sh\n
+        sleep 1
+        echo \"Launching missile...\" >&2' > /root/message.sh &&
+        chmod +x /root/message.sh"
 
 
 Kör scriptet:

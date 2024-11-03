@@ -15,7 +15,7 @@
           "text": "step i/server.md"
         },
         {
-          "title": "Ansible inventory fil",
+          "title": "Ansible inventory file",
           "text": "step2/inventory.md",
           "background": "assets/setup1.sh"
         },

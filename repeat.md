@@ -244,8 +244,20 @@ docker exec -i command_server /bin/sh /root/message.sh
         chmod +x /root/launch_missile.sh"
 
 
+
+    - name: Abort missile script (under maintenance on Command Server)
+      raw: |
+        docker exec -i command_server /bin/sh -c "
+        echo -e '#!/bin/sh\n
+        sleep 1
+        echo \"Under maintenance, please switch to the backup server.\" >&2' > /root/abort_missile.sh &&
+        chmod +x /root/abort_missile.sh"
+        
+
 Kör scriptet:
 docker exec -i command_server /bin/sh /root/launch_missile.sh
+docker exec -i command_server /bin/sh /root/abort_missile.sh
+
 ----------------------------
 
 

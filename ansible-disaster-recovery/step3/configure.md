@@ -35,22 +35,15 @@ Then we want to add some tasks, the first one is creating the launch script for 
         chmod +x /root/launch_missile.sh"
 ```{{exec}}
 
-Then, we want to be able to launch the missile with this task
-```
-    - name: Run missile launch script
-      command: /usr/local/bin/launch_missile
-
-```{{exec}}
-
 Of course, we also want to be able to abort the launch. It is currently under maintenance, but that should be fine since we don't plan on starting any wars in the near future.
 ```
-    - name: Abort missile script (under maintenance on command server)
-      copy:
-        content: |
-          #!/bin/bash
-          echo "Under maintenance, please switch to the backup server."
-        dest: /usr/local/bin/abort
-        mode: '0755'
+    - name: Abort missile script (under maintenance on Command Server)
+      raw: |
+        docker exec -i command_server /bin/sh -c "
+        echo -e '#!/bin/sh\n
+        sleep 1
+        echo \"Under maintenance, please switch to the backup server.\" >&2' > /root/abort_missile.sh &&
+        chmod +x /root/abort_missile.sh"
 ```{{exec}}
 
 Now, you can write out and exit Nano.

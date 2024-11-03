@@ -9,7 +9,7 @@
         {
           "title": "Setting Up Ansible",
           "text": "step1/env.md",
-          "background": "assets/setup.sh"
+          "foreground": "assets/setup.sh"
         },
         {
           "title": "Simulate Server",

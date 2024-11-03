@@ -261,7 +261,7 @@ docker exec -i command_server /bin/sh /root/abort_missile.sh
 
 ---
 - name: Configure Backup Server
-  hosts: missile_server
+  hosts: backup_server
   become: yes
   tasks:
     - name: Create launch missile script
@@ -280,6 +280,9 @@ docker exec -i command_server /bin/sh /root/abort_missile.sh
         echo \"Missile launch aborted successfully!\" >&2' > /root/abort_missile.sh &&
         chmod +x /root/abort_missile.sh"
 
+
+docker exec -i backup_server /bin/sh /root/launch_missile.sh
+docker exec -i backup_server /bin/sh /root/abort_missile.sh
 ----------------------------
 
 

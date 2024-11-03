@@ -58,12 +58,12 @@ Use the same setup as for the command server but with the old abort script.
 cat <<EOF >> backup_server.yml
 ---
 - name: Configure Backup Server
-  hosts: missile_server
+  hosts: backup_server
   become: yes
   tasks:
     - name: Create launch missile script
       raw: |
-        docker exec -i command_server /bin/sh -c "
+        docker exec -i backup_server /bin/sh -c "
         echo -e '#!/bin/sh\n
         sleep 1
         echo \"Launching missile...\" >&2' > /root/launch_missile.sh &&
@@ -71,7 +71,7 @@ cat <<EOF >> backup_server.yml
 
     - name: Abort missile script on backup server
       raw: |
-        docker exec -i command_server /bin/sh -c "
+        docker exec -i backup_server /bin/sh -c "
         echo -e '#!/bin/sh\n
         sleep 1
         echo \"Missile launch aborted successfully!\" >&2' > /root/abort_missile.sh &&

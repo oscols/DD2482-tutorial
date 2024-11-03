@@ -13,7 +13,11 @@
         },
         {
           "title": "Simulate Server",
-          "text": "step2/simulate.md"
+          "text": "step i/server.md"
+        },
+        {
+          "title": "Ansible inventory fil",
+          "text": "step2/inventory.md"
         },
         {
           "title": "Configure Server",

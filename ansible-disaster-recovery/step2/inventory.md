@@ -10,8 +10,11 @@ Now, let's edit the inventory file to create a host group named missile_server, 
 We will use the cat commande to write directly to the file.
 ```
 cat <<EOF >> inventory.ini 
-[missile_server]
-missile_server ansible_connection=local
+[command_server]
+command_server ansible_connection=local
+
+[backup_server]
+backup_server ansible_connection=local
 EOF
 ```{{exec}}
 

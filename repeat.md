@@ -211,7 +211,14 @@ command_server.yml:
 
     - name: Run the bash script on the server with output redirection
       raw: docker exec -i command_server /bin/sh /root/message.sh
+
+
+
+Kör scriptet:
+docker exec -i command_server /bin/sh /root/message.sh
 ----------------------------
+
+
 
 
 Stop and Clean Up Containers

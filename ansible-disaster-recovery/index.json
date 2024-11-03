@@ -8,8 +8,7 @@
       "steps": [
         {
           "title": "Setting Up Ansible",
-          "text": "step1/env.md",
-          "foreground": "assets/setup.sh"
+          "text": "step1/env.md"
         },
         {
           "title": "Simulate Server",
@@ -17,7 +16,8 @@
         },
         {
           "title": "Ansible inventory fil",
-          "text": "step2/inventory.md"
+          "text": "step2/inventory.md",
+          "foreground": "assets/setup.sh"
         },
         {
           "title": "Configure Server",

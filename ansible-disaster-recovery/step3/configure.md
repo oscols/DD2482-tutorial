@@ -15,7 +15,7 @@ FIX
 We want to set the missile server as the host. 
 "become: yes" tells Ansible to execute the tasks as a superuser (root)
 ```
- ---
+---
 - name: Configure Command Server
   hosts: command_server
 ```{{exec}}

@@ -46,7 +46,7 @@ Of course, we also want to be able to abort the launch. It is currently under ma
         chmod +x /root/abort_missile.sh"
 ```{{exec}}
 
-Now, you can write out ```^O```{{exec}} and exit Nano ```^X```{{exec}}.
+Now, you can write out and exit Nano.
 
 We also want to create a backup in case something goes wrong, as a Disaster Recovery mechanism.
 ```
@@ -57,28 +57,24 @@ Use the same setup as for the command server but with the old abort script.
 ```
 cat <<EOF >> backup_server.yml
 ---
-- hosts: missile_server
+- name: Configure Backup Server
+  hosts: missile_server
   become: yes
   tasks:
     - name: Create launch missile script
-      copy:
-        content: |
-          #!/bin/bash
-          sleep 1
-          echo "Launching missile..."
-          # Missile launch logic
-        dest: /usr/local/bin/launch_missile
-        mode: '0755'
-
-    - name: Run missile launch script
-      command: /usr/local/bin/launch_missile
+      raw: |
+        docker exec -i command_server /bin/sh -c "
+        echo -e '#!/bin/sh\n
+        sleep 1
+        echo \"Launching missile...\" >&2' > /root/launch_missile.sh &&
+        chmod +x /root/launch_missile.sh"
 
     - name: Abort missile script on backup server
-      copy:
-        content: |
-          #!/bin/bash
-          echo "Missile launch aborted successfully!"
-        dest: /usr/local/bin/abort
-        mode: '0755'
+      raw: |
+        docker exec -i command_server /bin/sh -c "
+        echo -e '#!/bin/sh\n
+        sleep 1
+        echo \"Missile launch aborted successfully!\" >&2' > /root/abort_missile.sh &&
+        chmod +x /root/abort_missile.sh"
 EOF
 ```{{exec}}

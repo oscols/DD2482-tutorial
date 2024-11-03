@@ -15,9 +15,9 @@ FIX
 We want to set the missile server as the host. 
 "become: yes" tells Ansible to execute the tasks as a superuser (root)
 ```
----
-- hosts: command_server
-  become: yes
+ ---
+- name: Configure Command Server
+  hosts: command_server
 ```{{exec}}
 
 FIX
@@ -25,15 +25,14 @@ Then we want to add some tasks, the first one is creating the launch script for 
 "copy" means copy file to remote server, and the content of the file will be the logic to launch the missile, the current code is just a placeholder.
 "mode: '0755'" sets the file permission to 0755, which means the owner can do anyting with the script and readable/executable by others.
 ```
-   tasks:
+  tasks:
     - name: Create launch missile script
       raw: |
         docker exec -i command_server /bin/sh -c "
         echo -e '#!/bin/sh\n
         sleep 1
-        echo \"Launching missile...\" >&2' > /root/message.sh &&
-        chmod +x /root/message.sh"
-
+        echo \"Launching missile...\" >&2' > /root/launch_missile.sh &&
+        chmod +x /root/launch_missile.sh"
 ```{{exec}}
 
 Then, we want to be able to launch the missile with this task

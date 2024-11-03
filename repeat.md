@@ -207,6 +207,9 @@ command_server.yml:
         echo \"Hello from Ansible!\" >&2' > /root/message.sh &&
         chmod +x /root/message.sh"
 
+docker exec -i command_server /bin/sh /root/message.sh
+
+
 <!-- ---
 - name: Configure Nginx Server
   hosts: command_server
@@ -225,18 +228,24 @@ command_server.yml:
       raw: docker exec -i command_server /bin/sh /root/message.sh
  -->
 
+ ---
+- name: Configure Command Server
+  hosts: command_server
+
+
+
    tasks:
     - name: Create launch missile script
       raw: |
         docker exec -i command_server /bin/sh -c "
         echo -e '#!/bin/sh\n
         sleep 1
-        echo \"Launching missile...\" >&2' > /root/message.sh &&
-        chmod +x /root/message.sh"
+        echo \"Launching missile...\" >&2' > /root/launch_missile.sh &&
+        chmod +x /root/launch_missile.sh"
 
 
 Kör scriptet:
-docker exec -i command_server /bin/sh /root/message.sh
+docker exec -i command_server /bin/sh /root/launch_missile.sh
 ----------------------------
 
 

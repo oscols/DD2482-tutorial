@@ -11,19 +11,16 @@ Edit the file using Nano
 nano command_server.yml
 ```{{exec}}
 
-FIX
-We want to set the missile server as the host. 
-"become: yes" tells Ansible to execute the tasks as a superuser (root)
+We want to set the main server, `command_server`, as the host. 
 ```
 ---
 - name: Configure Command Server
   hosts: command_server
 ```{{exec}}
 
-FIX
 Then we want to add some tasks, the first one is creating the launch script for the missile.
-"copy" means copy file to remote server, and the content of the file will be the logic to launch the missile, the current code is just a placeholder.
-"mode: '0755'" sets the file permission to 0755, which means the owner can do anyting with the script and readable/executable by others.
+`raw` is used to create the script directly on the container by running shell commands via `docker exec`.
+The script file created by this task (/root/launch_missile.sh) is set up to contain the logic for launching a missile. Currently, it’s just a placeholder that outputs a message.
 ```
   tasks:
     - name: Create launch missile script

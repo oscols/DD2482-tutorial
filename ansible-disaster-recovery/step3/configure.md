@@ -46,7 +46,7 @@ Of course, we also want to be able to abort the launch. It is currently under ma
         chmod +x /root/abort_missile.sh"
 ```{{exec}}
 
-Now, you can write out and exit Nano.
+Now, you can write out ```^O```{{exec}} and exit Nano ```^X```{{exec}}.
 
 We also want to create a backup in case something goes wrong, as a Disaster Recovery mechanism.
 ```

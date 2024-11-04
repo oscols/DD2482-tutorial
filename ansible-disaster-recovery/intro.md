@@ -9,4 +9,4 @@ In this tutorial you will learn how to use the Configuration Management tool Ans
 
 Firstly, you will install Ansible and set up the local environment, which will represent the missile system. Then you will configure the system using Ansible. Finally, a disaster will be simulated, which you will solve using Disaster Recovery. Here’s a flowchart of this tutorial:
 
-![image info](./flow_chart.png)
+![image info](./flow_chart_updated.png)
